@@ -1,0 +1,36 @@
+%imread() , class(), rgb2gray(), imresize(Img,0.5,"nearest")
+%fonksiyonlarını görük.
+Img=imread('Image_processing_post_otsus_algorithm.jpg');%resmi imread() fonksiyonu ile okuduk.
+imshow(Img);%imshow() fonksiyonu ile resmimizi gösterdik ekranda
+axis on;%axis on ile resmin x ve y deki pixellerinin ekranda görünmesini sağladık
+disp(class(Img));%disp() ekranda göster yaptık. class() fonksiyonu ile resmin ne şekilde saklandığını öğrendik uint8 miş.
+Img2=imread("WhatsApp Image 2021-10-11 at 17.32.23 (1).jpeg");%imread() fonk ile diğer resmi okuduk
+figure;%figure ile yeni bir pencere açtık yeni resmi farklı bir pencerede açmak için
+Img2=rgb2gray(Img2);%rgb2gray() fonk ile resmimizi resnkliden gri levele çevirdik.
+imshow(Img2);
+axis on;
+disp("1. resmin boyutları:");
+disp(size(Img2));
+disp("2. resmin boyutları:");
+disp(size(Img2));
+Img_new=imresize(Img,0.5,"nearest");%imresize(resim,küçültme ya da büyültme oranı,küçültme nasıl yapısın)
+figure;
+imshow(Img_new);
+axis on;
+P=Img2(200,24);%resimdeki 200 x,24 y deki pizelin gray levelini p ye atadık.
+disp(P);
+B=Img(200:400,200:500);
+figure;
+imshow(B);
+%img(:) yaptığımızda img matriximizi sütün matrix yapıyoruz böylece dizideki
+%en yüksek değerli pixelin değerinini bulmuş oluyoruz.
+
+Max_value=max(Img2(:));
+Min_value=min(Img2(:));
+disp("max value of image 2:")
+disp(Max_value);
+disp("min value of image 2:")
+disp(Min_value);
+s=size(Img2);
+disp(s);
+class(s)
